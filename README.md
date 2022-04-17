@@ -23,32 +23,37 @@ Create a new virtualenv that uses Python 3. Please make sure to run this command
 
 **Important**: Then activate the env by executing the `source` command that is output by the shell script above.
 
+    source venvs/torch3/bin/activate
+
 Download and install required software:
 
     ./scripts/install_packages.sh
 
 Download and preprocess data:
-* Make sure to first delete the 'data' folder again in order to reproduce the steps we took for downloading
+* Make sure to first delete the `data` folder again in order to reproduce the steps we took for downloading
 
 
     ./scripts/download_data.sh
 
 Train the models:
 * The command `mkdir -p $models` is already commented out, so you can start the training directly and do not need to change this section of the script
-* In order to obtain all 5 models, change the settings the following way:
+* Before training, in order to obtain all 5 models, change the settings the following way:
   * --dropout 0; --save $models/model_00.pt
   * --dropout 0.3; --save $models/model_03.pt
   * --dropout 0.5; --save $models/model_05.pt
   * --dropout 0.7; --save $models/model_07.pt
   * --dropout 1; --save $models/model_10.pt
 
+Then run the following script to train the specified model:
 
     ./scripts/train.sh
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
-In order to create the tables and the charts, cd into the `scripts` directory and run `python3 table_chart_creator.py`.
+In order to create the tables and the charts, cd into the `scripts` directory and run:
 
-Generate (sample) some text from a trained model with:
+    python3 table_chart_creator.py
+
+After changing directory back to `mt-exercise-3`, generate (sample) some text from a trained model with:
 
     ./scripts/generate.sh
