@@ -58,7 +58,13 @@ def create_table(train, val, test):
 
 
 def create_chart(train, val):
-    pass
+    train_plot = train.plot()
+    train_fig = train_plot.get_figure()
+    val_plot = val.plot()
+    val_fig = val_plot.get_figure()
+
+    train_fig.savefig('train.pdf')
+    val_fig.savefig('val.pdf')
 
 
 def main():
@@ -82,7 +88,7 @@ def main():
     writer.close()
 
     # Create the line chart
-    create_chart(train_ppl, val_ppl)
+    create_chart(train_df, val_df)
 
 
 if __name__ == '__main__':
