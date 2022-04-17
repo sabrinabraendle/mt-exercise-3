@@ -47,6 +47,8 @@ Train the models:
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
+In order to create the tables and the charts, cd into the `scripts` directory and run `python3 table_chart_creator.py`.
+
 Generate (sample) some text from a trained model with:
 
     ./scripts/generate.sh
