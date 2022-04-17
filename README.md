@@ -28,10 +28,20 @@ Download and install required software:
     ./scripts/install_packages.sh
 
 Download and preprocess data:
+* Make sure to first delete the 'data' folder again in order to reproduce the steps we took for downloading
+
 
     ./scripts/download_data.sh
 
-Train a model:
+Train the models:
+* The command `mkdir -p $models` is already commented out, so you can start the training directly and do not need to change this section of the script
+* In order to obtain all 5 models, change the settings the following way:
+  * --dropout 0; --save $models/model_00.pt
+  * --dropout 0.3; --save $models/model_03.pt
+  * --dropout 0.5; --save $models/model_05.pt
+  * --dropout 0.7; --save $models/model_07.pt
+  * --dropout 1; --save $models/model_10.pt
+
 
     ./scripts/train.sh
 
