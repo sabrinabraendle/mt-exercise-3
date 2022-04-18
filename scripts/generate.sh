@@ -18,5 +18,6 @@ device=""
         --data $data/pride \
         --words 100 \
         --checkpoint $models/model_00.pt \
-        --outf $samples/sample
+        --outf $samples/sample_dev \
+        --input "Good morning"
 )

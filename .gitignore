@@ -130,7 +130,7 @@ dmypy.json
 
 # Exercise folders
 venvs/
-tools/
+# tools/
 data/
 models/
 samples/
