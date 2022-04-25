@@ -14,10 +14,10 @@ num_threads=4
 device=""
 
 (cd $tools/pytorch-examples/word_language_model &&
-    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python3 generate.py \
         --data $data/pride \
-        --words 100 \
-        --checkpoint $models/model_00.pt \
+        --words 10 \
+        --checkpoint $models/model_03.pt \
         --outf $samples/sample_dev \
-        --input "Good morning"
+        --input "you are astonished"
 )
